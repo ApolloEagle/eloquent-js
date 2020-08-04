@@ -9,3 +9,16 @@ const arrayToList = (array) => {
 
     return objList;
 }
+
+const listToArray = list => {
+    let arr = [];
+    arr.push(list.value);
+    while (list.hasOwnProperty('rest') && list.rest !== null) {
+      list = list.rest;
+      if (list.hasOwnProperty('value')) {
+      	arr.push(list.value);
+      }
+    }
+
+    return arr;
+}
